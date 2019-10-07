@@ -173,15 +173,15 @@ class ROPRidge_loader(data.Dataset):
 
         if not np.all(classes == np.unique(lbl)):
             print("WARN: resizing labels yielded fewer classes")
-        '''
+        
         if not np.all(np.unique(lbl[lbl != self.ignore_index]) < self.n_classes):
             print(np.all(np.unique(lbl[lbl != self.ignore_index]))<self.n_classes)
             print("after det", classes, np.unique(lbl))
             raise ValueError("Segmentation map contained invalid class values")
-        '''
-        np.unique(lbl)
+        
+        #np.unique(lbl)
         img = torch.from_numpy(img).float()
-        lbl = torch.from_numpy(lbl).long()-1
+        lbl = torch.from_numpy(lbl).long()
         print(lbl.size())
         return img, lbl
 

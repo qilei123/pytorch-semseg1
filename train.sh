@@ -1,2 +1,2 @@
 git pull
-python3 train.py --config configs/unet_ropridge.yml
+python3 train.py --config configs/segnet_ropridge.yml

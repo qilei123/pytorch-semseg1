@@ -125,10 +125,12 @@ def train(cfg, writer, logger):
 
             optimizer.zero_grad()
             outputs = model(images)
+
             print(torch.max(outputs))
             print(torch.min(outputs))
             print(torch.max(labels))
             print(torch.min(labels))
+            
             loss = loss_fn(input=outputs, target=labels)
 
             loss.backward()

@@ -125,7 +125,8 @@ def train(cfg, writer, logger):
 
             optimizer.zero_grad()
             outputs = model(images)
-
+            print(outputs.size())
+            
             loss = loss_fn(input=outputs, target=labels)
 
             loss.backward()

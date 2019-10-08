@@ -125,7 +125,7 @@ def train(cfg, writer, logger):
 
             optimizer.zero_grad()
             outputs = model(images)
-            print(outputs.size())
+            print(torch.max(outputs))
             
             loss = loss_fn(input=outputs, target=labels)
 

@@ -34,7 +34,7 @@ class ROPRidge_loader(data.Dataset):
     mean_rgb = {
         "pascal": [103.939, 116.779, 123.68],
         "cityscapes": [0.0, 0.0, 0.0],
-        "ropridge":[0.0, 0.0, 0.0]
+        "ropridge":[127.5, 127.5, 127.5]
     }  # pascal mean for PSPNet and ICNet pre-trained model
 
     def __init__(
@@ -100,7 +100,7 @@ class ROPRidge_loader(data.Dataset):
         self.valid_classes = [1]
         self.class_names = ["unlabelled","ropridge"]
 
-        self.ignore_index = -1
+        self.ignore_index = 250
         self.class_map = dict(zip(self.valid_classes, range(1)))
         '''
         if not self.files[split]:

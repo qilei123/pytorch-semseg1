@@ -24,8 +24,8 @@ class ROPRidge_loader(data.Dataset):
     Many Thanks to @fvisin for the loader repo:
     https://github.com/fvisin/dataset_loaders/blob/master/dataset_loaders/images/cityscapes.py
     """
-    number_of_class = 1
-    colors = [  # [  0,   0,   0],
+    number_of_class = 2
+    colors = [   [  0,   0,   0],
         [128, 64, 128],
     ]
 
@@ -34,7 +34,7 @@ class ROPRidge_loader(data.Dataset):
     mean_rgb = {
         "pascal": [103.939, 116.779, 123.68],
         "cityscapes": [0.0, 0.0, 0.0],
-        "ropridge":[104.00699, 116.66877, 122.67892]
+        "ropridge":[127.5, 127.5, 127.5]
     }  # pascal mean for PSPNet and ICNet pre-trained model
 
     def __init__(
@@ -96,8 +96,8 @@ class ROPRidge_loader(data.Dataset):
 
         self.files[split] = recursive_glob(rootdir=self.images_base, suffix=".png")
         '''
-        self.void_classes = [0]
-        self.valid_classes = [1]
+        self.void_classes = [-1]
+        self.valid_classes = [0,1]
         self.class_names = ["unlabelled","ropridge"]
 
         self.ignore_index = 250

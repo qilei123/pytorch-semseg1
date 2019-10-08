@@ -182,7 +182,7 @@ class ROPRidge_loader(data.Dataset):
         #np.unique(lbl)
         img = torch.from_numpy(img).float()
         lbl = torch.from_numpy(lbl).long()
-        print(lbl.size())
+        #print(lbl.size())
         return img, lbl
 
     def decode_segmap(self, temp):

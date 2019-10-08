@@ -100,7 +100,7 @@ class ROPRidge_loader(data.Dataset):
         self.valid_classes = [1]
         self.class_names = ["unlabelled","ropridge"]
 
-        self.ignore_index = 250
+        self.ignore_index = 251
         self.class_map = dict(zip(self.valid_classes, range(1)))
         '''
         if not self.files[split]:

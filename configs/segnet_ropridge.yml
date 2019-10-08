@@ -1,5 +1,5 @@
 model:
-    arch: unet
+    arch: segnet
 data:
     dataset: ropridgeone
     train_split: train
@@ -22,4 +22,4 @@ training:
         name: 'cross_entropy'
         size_average: False
     lr_schedule:
-    resume: unet_ropridge_best_model.pkl
+    resume: segnet_ropridge_best_model.pkl

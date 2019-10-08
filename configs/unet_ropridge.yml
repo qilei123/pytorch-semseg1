@@ -1,5 +1,5 @@
 model:
-    arch: unet
+    arch: segnet
 data:
     dataset: ropridgeone
     train_split: train

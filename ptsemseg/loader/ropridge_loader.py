@@ -34,7 +34,7 @@ class ROPRidge_loader(data.Dataset):
     mean_rgb = {
         "pascal": [103.939, 116.779, 123.68],
         "cityscapes": [0.0, 0.0, 0.0],
-        "ropridge":[127.5, 127.5, 127.5]
+        "ropridge":[104.00699, 116.66877, 122.67892]
     }  # pascal mean for PSPNet and ICNet pre-trained model
 
     def __init__(
